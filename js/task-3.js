@@ -1,8 +1,10 @@
-'use strict';
-
 const profile = {
-  username: "Jacob",
+  username: 'Jacob',
   playTime: 300,
+
+  getInfo() {
+    return `${this.username} has ${this.playTime} active hours!`;
+  },
 
   changeUsername(newName) {
     this.username = newName;
@@ -11,15 +13,12 @@ const profile = {
   updatePlayTime(hours) {
     this.playTime += hours;
   },
-
-  getInfo() {
-    return `${this.username} has ${this.playTime} active hours!`;
-  }
 };
 
-console.log('Task 3:');
-OutputHelper.printResult('task-3-output', profile.getInfo());
-profile.changeUsername("Marco");
-OutputHelper.printResult('task-3-output', profile.getInfo());
+console.log(profile.getInfo());
+
+profile.changeUsername('Marco');
+console.log(profile.getInfo());
+
 profile.updatePlayTime(20);
-OutputHelper.printResult('task-3-output', profile.getInfo());
+console.log(profile.getInfo());
